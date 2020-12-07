@@ -24,8 +24,4 @@ hs_err_pid*
 No ramo main
 jFormattedMoney/build*
 !jFormattedMoney/dist/*
-jFormattedMoney/nbproject
-
-/JFormattedMoney/nbproject/private/
-/JFormattedMoney/dist/
-/JFormattedMoney/build/
+jFormattedMoney/nbproject/*

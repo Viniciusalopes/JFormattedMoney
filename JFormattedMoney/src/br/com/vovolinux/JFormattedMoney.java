@@ -61,7 +61,8 @@ public class JFormattedMoney extends javax.swing.JFormattedTextField {
      */
     private String validChars = "-01234.567,89";
     private String numberFormat = "#,##0.00";
-    
+    private String noRepeat = "-,";
+
     // FONTE: https://javadevnotes.com/java-float-to-string-examples
     private DecimalFormat decimalFormat = new DecimalFormat(numberFormat);
 
@@ -158,13 +159,12 @@ public class JFormattedMoney extends javax.swing.JFormattedTextField {
      */
     private void moneyKeyTyped(KeyEvent evt) {
         char c = (char) evt.getKeyChar();
-        for (char t : this.getText().toCharArray()) {
-            if (t == ',' || t == '-') {
-                evt.setKeyChar((char) KeyEvent.VK_CLEAR); // don't repeat , and -
-                return;
-            }
+        if (noRepeat.contains(c + "") && this.getText().contains(c + "")) {
+            evt.setKeyChar((char) KeyEvent.VK_CLEAR); // don't repeat , and -
+            return;
         }
-        evt.setKeyChar(validChars.contains(c + "") ? c : (char) KeyEvent.VK_CLEAR);
+        evt.setKeyChar(validChars.contains(c + "") ? c : (char) KeyEvent.VK_CLEAR
+        );
     }
 
     /**
