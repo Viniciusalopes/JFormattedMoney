@@ -26,3 +26,6 @@ jFormattedMoney/build*
 !jFormattedMoney/dist/*
 jFormattedMoney/nbproject
 
+/JFormattedMoney/nbproject/private/
+/JFormattedMoney/dist/
+/JFormattedMoney/build/
